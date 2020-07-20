@@ -1,0 +1,10 @@
+{
+  "name": "ngx-hotkey",
+  "version": "1.0.2",
+  "author": "Danilo Peres",
+  "description": "An easy way to use Hotkeys in Angular.",
+  "peerDependencies": {
+    "@angular/common": "^7.2.0",
+    "@angular/core": "^7.2.0"
+  }
+}
