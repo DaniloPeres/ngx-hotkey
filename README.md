@@ -36,8 +36,6 @@ export class AppModule {
 
 ```typescript
 import { Component, OnDestroy } from '@angular/core';
-import { SideNavMenuDetailsComponent } from '../side-nav-menu-details/side-nav-menu-details.component';
-import ExplorerFile from 'src/app/models/view-manager/explorer-file';
 import { NgxHotkeyService } from 'ngx-hotkey';
 
 @Component({
@@ -75,4 +73,4 @@ danilo_meirelles@hotmail.com
 
 ## License
 
-MIT © [Atul Kumar](https://github.com/atularen)
+MIT © [Danilo Peres](https://github.com/daniloperes)

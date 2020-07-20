@@ -1,24 +1,76 @@
-# NgxHotkey
+# ngx-hotkey
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.0.
+ngx-hotkey is an easy way to register shortcuts in Angular.
 
-## Code scaffolding
+## Setup
 
-Run `ng generate component component-name --project ngx-hotkey` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-hotkey`.
-> Note: Don't forget to add `--project ngx-hotkey` or else it will be added to the default project in your `angular.json` file. 
+### Installation
 
-## Build
+Install from npm repository:
+```
+npm install ngx-hotkey --save
+ ```
+--------------------
+Include ngx-hotkey in Main Module and Feature Modules where you want to use the editor component.(eg: app.module.ts): 
+```typescript
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { AppComponent } from './app.component';
+...
 
-Run `ng build ngx-hotkey` to build the project. The build artifacts will be stored in the `dist/` directory.
+import { NgxHotkeyService } from 'ngx-hotkey'; // <- Import the library
+@NgModule({
+  declarations: [...],
+  imports: [...],
+  providers: [
+    ...
+    NgxHotkeyService // <- Add this service
+  ],
+  bootstrap: [...]
+})
+export class AppModule {
+}
+```
 
-## Publishing
+## Sample
 
-After building your library with `ng build ngx-hotkey`, go to the dist folder `cd dist/ngx-hotkey` and run `npm publish`.
+```typescript
+import { Component, OnDestroy } from '@angular/core';
+import { NgxHotkeyService } from 'ngx-hotkey';
 
-## Running unit tests
+@Component({
+    selector: 'my-comp'
+})
+export class MyComp implements OnDestroy {
 
-Run `ng test ngx-hotkey` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    constructor(private ngxHotKeyService: NgxHotkeyService) {
+        this.ngxHotKeyService.add('ctrl+b', (event: KeyboardEvent) => {
+            alert('ctrl+b pressed');
+            return false;
+        });
+        this.ngxHotKeyService.add('control+a', (event: KeyboardEvent) => {
+            alert('ctrl+a pressed');
+            return false;
+        });
+        this.ngxHotKeyService.add('ctrl+shift+s', (event: KeyboardEvent) => {
+            alert('ctrl+shift+a pressed');
+            return false;
+        });
+    }
 
-## Further help
+    ngOnDestroy() {
+        // remove shortcuts
+        this.ngxHotKeyService.remove('ctrl+b');
+        this.ngxHotKeyService.remove('control+a');
+        this.ngxHotKeyService.remove('ctrl+shift+s');
+    }
+}
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Author
+Danilo Peres
+danilo_meirelles@hotmail.com
+
+## License
+
+MIT © [Danilo Peres](https://github.com/daniloperes)
