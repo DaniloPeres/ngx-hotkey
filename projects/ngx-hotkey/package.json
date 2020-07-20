@@ -1,6 +1,6 @@
 {
   "name": "ngx-hotkey",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "author": "Danilo Peres",
   "description": "An easy way to use Hotkeys in Angular.",
   "license": "MIT",
@@ -8,6 +8,15 @@
     "type": "git",
     "url": "https://github.com/DaniloPeres/ngx-hotkey.git"
   },
+  "keywords": [
+    "Angular",
+    "Shortcut",
+    "Shortcuts",
+    "hotkey",
+    "hotkeys",
+    "hotkeys for angular",
+    "shortcuts for angular"
+  ],
   "peerDependencies": {
     "@angular/common": "^7.2.0",
     "@angular/core": "^7.2.0"

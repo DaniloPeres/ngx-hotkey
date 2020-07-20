@@ -1,9 +1,9 @@
 export default class Hotkey {
-    altKey = false;
-    ctrlKey = false;
-    metaKey = false;
-    shiftKey = false;
-    key: string;
+    public altKey = false;
+    public ctrlKey = false;
+    public metaKey = false;
+    public shiftKey = false;
+    public key: string;
 
     private aliases: any = {
         'ctrl': 'control'
