@@ -1,6 +1,6 @@
 {
   "name": "ngx-hotkey",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "author": "Danilo Peres",
   "description": "An easy way to use Hotkeys in Angular.",
   "license": "MIT",

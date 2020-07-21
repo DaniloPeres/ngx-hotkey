@@ -8,7 +8,7 @@ export class NgxHotkeyService {
     private hotkeys: Hotkey[] = [];
 
     constructor() {
-        document.addEventListener('keyup', this.checkKeyUp.bind(this), false);
+        document.addEventListener('keydown', this.checkKeyUp.bind(this), false);
     }
 
     add(shortcut: string, callback: (event: KeyboardEvent) => boolean) {
