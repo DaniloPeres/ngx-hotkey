@@ -45,16 +45,22 @@ export class MyComp implements OnDestroy {
 
     constructor(private ngxHotKeyService: NgxHotkeyService) {
         this.ngxHotKeyService.add('ctrl+b', (event: KeyboardEvent) => {
+            event.stopPropagation();
+            event.preventDefault();
             alert('ctrl+b pressed');
-            return false;
+            return true;
         });
         this.ngxHotKeyService.add('control+a', (event: KeyboardEvent) => {
+            event.stopPropagation();
+            event.preventDefault();
             alert('ctrl+a pressed');
-            return false;
+            return true;
         });
         this.ngxHotKeyService.add('ctrl+shift+s', (event: KeyboardEvent) => {
+            event.stopPropagation();
+            event.preventDefault();
             alert('ctrl+shift+a pressed');
-            return false;
+            return true;
         });
     }
 
