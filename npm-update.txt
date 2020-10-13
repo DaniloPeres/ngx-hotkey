@@ -1,0 +1,7 @@
+npm login
+
+ng build ngx-hotkey
+
+cd .\dist\ngx-hotkey\
+
+npm publish
